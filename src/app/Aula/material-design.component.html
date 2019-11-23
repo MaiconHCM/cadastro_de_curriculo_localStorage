@@ -1,0 +1,154 @@
+<div class="container" style="background-color: red">
+    <div class="card">
+        <div class="card-content">
+            <form #f="ngForm" nodisabled>
+                <h5 class="center-align">Cadastro de Currículos</h5>
+
+                <mz-collapsible [mode]="'expandable'">
+
+                    <!--Dados Pessoais -->
+                    <mz-collapsible-item [active]="true">
+                        <mz-collapsible-item-header>
+                            <i class="material-icons">
+                                people_alt
+                            </i>
+                            <span class="vertical-align-super">Dados Pessoais</span>
+                        </mz-collapsible-item-header>
+                        <mz-collapsible-item-body>
+                            <div class="row">
+                                <mz-input-container class="col s12 m6">
+                                    <input mz-input name="nome" [(ngModel)]="pessoa.nome" id="nome" type="text"
+                                        [label]="'Nome'" lenght="60" />
+                                </mz-input-container>
+                                <mz-input-container class="col s12 m6">
+                                    <input mz-input [(ngModel)]="pessoa.sobrenome" name="sobrenome" id="sobrenome"
+                                        type="text" [label]="'Sobrenome'" lenght="60" />
+                                </mz-input-container>
+                                <mz-input-container class="col s12 m6">
+                                    <input mz-input [(ngModel)]="pessoa.cpf" name="cpf" id="cpf" type="text"
+                                        [label]="'CPF'" lenght="60" />
+                                </mz-input-container>
+                                <mz-input-container class="col s12 m6">
+                                    <input mz-input [(ngModel)]="pessoa.email" name="email" id="email" type="email"
+                                        [label]="'E-mail'" lenght="60" />
+                                </mz-input-container>
+                                <mz-input-container class="col s12 m6">
+                                    <input mz-input [(ngModel)]="pessoa.celular" name="celular" id="celular" type="tel"
+                                        [label]="'Celular'" lenght="60" />
+                                </mz-input-container>
+                                <mz-input-container class="col s12 m6">
+                                    <input mz-datepicker [(ngModel)]="pessoa.nascimento" name="nascimento"
+                                        id="nascimento" type="date" [label]="'Data de Nascimento'" lenght="60" />
+                                </mz-input-container>
+                                <div class="row">
+                                    <div class="col s6">
+                                        <mz-radio-button-container class="col s6 m4">
+                                            <input mz-radio-button [label]="'Masculino'" [(ngModel)]="pessoa.genero"
+                                                name="genero" [withGap]="true" id="masculino" name="genero" type="radio"
+                                                value="Masculino">
+                                        </mz-radio-button-container>
+                                        <mz-radio-button-container class="col s6 m4">
+                                            <input mz-radio-button [label]="'Feminino'" [(ngModel)]="pessoa.genero"
+                                                name="genero" [withGap]="true" id="feminino" name='genero' type="radio"
+                                                value="Feminino">
+                                        </mz-radio-button-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </mz-collapsible-item-body>
+                    </mz-collapsible-item>
+                    <!--Endereço-->
+                    <mz-collapsible-item>
+                        <mz-collapsible-item-header>
+                            <i class="material-icons">account_balance</i>
+                            <span class="vertical-align-super">Endereço</span>
+                        </mz-collapsible-item-header>
+                        <mz-collapsible-item-body>
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <mz-select-container>
+                                        <select [(ngModel)]="pessoa.cidade" name="cidade" mz-select id="cidade"
+                                            [label]="'Cidade'">
+                                            <option>Pato Branco</option>
+                                            <option>Dois Vizinhos</option>
+                                            <option>Francisco Beltrão</option>
+                                        </select>
+                                    </mz-select-container>
+                                </div>
+
+
+                                <div class="col s12 m6">
+                                    <mz-select-container>
+                                        <select [(ngModel)]="pessoa.bairro" name="bairro" mz-select id="bairro"
+                                            [label]="'Bairro'">
+                                            <option>Centro</option>
+                                            <option>Alvorada</option>
+                                            <option>Planalto</option>
+
+                                        </select>
+                                    </mz-select-container>
+                                </div>
+                                <div class="col s12 m12">
+                                    <mz-input-container>
+                                        <input mz-input [(ngModel)]="pessoa.logradouro" name="logradouro"
+                                            id="logradouro" type="text" [label]="'logradouro'" lenght="60" />
+                                    </mz-input-container>
+                                </div>
+                            </div>
+
+                        </mz-collapsible-item-body>
+                    </mz-collapsible-item>
+                    <mz-collapsible-item>
+                        <mz-collapsible-item-header>
+                            <i class="material-icons">play_for_work</i>
+                            <span class="vertical-align-super">Formação</span>
+                        </mz-collapsible-item-header>
+                        <mz-collapsible-item-body>
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <mz-select-container>
+                                        <select [(ngModel)]="pessoa.formacao" name="formacao" mz-select id="formacao"
+                                            [label]="'Formação'">
+                                            <option value="4">Ensino Fundamental Incompleto</option>
+                                            <option value="5">Ensino Fundamental Completo</option>
+                                            <option value="6">Ensino Médio Incompleto</option>
+                                            <option value="7">Ensino Médio Completo</option>
+                                            <option value="8">Técnico/Pós-Médio Incompleto</option>
+                                            <option value="9">Técnico/Pós-Médio Completo</option>
+                                            <option value="10">Tecnólogo Incompleto</option>
+                                            <option value="11">Superior Incompleto</option>
+                                            <option value="12">Tecnólogo Completo</option>
+                                            <option value="13">Superior Completo</option>
+                                        </select>
+                                    </mz-select-container>
+                                </div>
+                                <mz-input-container class="col s12 m6">
+                                    <input mz-input name="salario" [(ngModel)]="pessoa.salario" id="salario" type="number"
+                                        [label]="'Pretensão salarial'" lenght="60" />
+                                </mz-input-container>
+                                <div class="col s12 m12">
+                                    <mz-select-container>
+                                        <textarea [(ngModel)]="pessoa.conhecimentos" name="conhecimentos" mz-textarea
+                                            [label]="'Descreva seus Conhecimentos'" id="conhecimentos">
+                                        </textarea>
+                                    </mz-select-container>
+                                </div>
+                            </div>
+                        </mz-collapsible-item-body>
+                    </mz-collapsible-item>
+                </mz-collapsible>
+            </form>
+            <div class="card-content">
+
+            </div>
+            <div>
+                <button mz-button (click)="salvar()" type="submit">
+                    Salvar
+                </button>
+                <button mz-button (click)="cancelar()" type="submit">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
